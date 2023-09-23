@@ -1,7 +1,7 @@
 # 数据源配置
 spring:
   datasource:
-    name: newbee-mall-datasource
+    name: star-mall-datasource
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/newbee_mall_plus_db?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true&useAffectedRows=true
     username: root

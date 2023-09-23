@@ -1,7 +1,7 @@
 # 数据源配置
 spring:
   datasource:
-    name: newbee-mall-datasource
+    name: star-mall-datasource
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/newbee_mall_plus_db?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true&useAffectedRows=true&allowPublicKeyRetrieval=true
     username: root
@@ -18,12 +18,12 @@ spring:
   data:
     redis:
       host: 127.0.0.1
-      port: 8094
+      port: 6379
       database: 0
       connect-timeout: 5000ms
       timeout: 5000ms
       client-type: lettuce
-      password: "liujun"
+      password: "star"
   mail:
     # SMTP服务器
     host: smtp.163.com

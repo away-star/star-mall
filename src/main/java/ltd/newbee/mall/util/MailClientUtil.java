@@ -4,9 +4,7 @@ package ltd.newbee.mall.util;
 import jakarta.annotation.Resource;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
@@ -29,7 +27,7 @@ public class MailClientUtil {
      * @param theme，主题，当前邮件主题
      * @param content，邮件内容    发送邮件失败会保存日志
      */
-    public boolean sendMail(String to, String theme, String content) {
+    public void sendMail(String to, String theme, String content) {
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -72,7 +70,6 @@ public class MailClientUtil {
 
 
             mailSender.send(helper.getMimeMessage());
-            return true;
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);

@@ -8,10 +8,9 @@ import java.util.Map;
 /**
  * 分页查询参数
  *
- * @author 13
- * @qq交流群 791509631
- * @email 2449207463@qq.com
- * @link https://github.com/newbee-ltd
+ * @author xingxing
+ * @email 2064989403@qq.com
+
  */
 public class PageQueryUtil extends LinkedHashMap<String, Object> {
     // 当前页码

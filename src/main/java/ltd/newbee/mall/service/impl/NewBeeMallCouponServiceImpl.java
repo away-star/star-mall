@@ -1,5 +1,6 @@
 package ltd.newbee.mall.service.impl;
 
+import jakarta.annotation.Resource;
 import ltd.newbee.mall.controller.vo.NewBeeMallCouponVO;
 import ltd.newbee.mall.controller.vo.NewBeeMallMyCouponVO;
 import ltd.newbee.mall.controller.vo.NewBeeMallShoppingCartItemVO;
@@ -14,7 +15,6 @@ import ltd.newbee.mall.util.BeanUtil;
 import ltd.newbee.mall.util.PageQueryUtil;
 import ltd.newbee.mall.util.PageResult;
 import org.apache.commons.collections4.CollectionUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,13 +28,13 @@ import static java.util.stream.Collectors.toMap;
 @Service
 public class NewBeeMallCouponServiceImpl implements NewBeeMallCouponService {
 
-    @Autowired
+    @Resource
     private NewBeeMallCouponMapper newBeeMallCouponMapper;
 
-    @Autowired
+    @Resource
     private NewBeeMallUserCouponRecordMapper newBeeMallUserCouponRecordMapper;
 
-    @Autowired
+    @Resource
     private NewBeeMallGoodsMapper newBeeMallGoodsMapper;
 
     @Override

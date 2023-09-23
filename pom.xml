@@ -174,7 +174,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>newbee-mall-plus</finalName>
+        <finalName>star-mall</finalName>
     </build>
     <repositories>
         <repository>

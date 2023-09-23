@@ -3,10 +3,9 @@ package ltd.newbee.mall.util;
 import java.security.MessageDigest;
 
 /**
- * @author 13
- * @qq交流群 791509631
- * @email 2449207463@qq.com
- * @link https://github.com/newbee-ltd
+ * @author xingxing
+ * @email 2064989403@qq.com
+
  */
 public class MD5Util {
 

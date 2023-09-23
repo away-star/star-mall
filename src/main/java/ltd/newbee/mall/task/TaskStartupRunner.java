@@ -1,8 +1,8 @@
 package ltd.newbee.mall.task;
 
+import jakarta.annotation.Resource;
 import ltd.newbee.mall.dao.NewBeeMallOrderMapper;
 import ltd.newbee.mall.entity.NewBeeMallOrder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -21,9 +21,9 @@ import java.util.List;
 public class TaskStartupRunner implements ApplicationRunner {
 
     public static final Long UN_PAID_ORDER_EXPIRE_TIME = 30L;
-    @Autowired
+    @Resource
     private NewBeeMallOrderMapper newBeeMallOrderMapper;
-    @Autowired
+    @Resource
     private TaskService taskService;
 
     @Override

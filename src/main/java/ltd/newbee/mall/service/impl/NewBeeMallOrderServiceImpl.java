@@ -1,13 +1,7 @@
-/**
- * 严肃声明：
- * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
- * 本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
- * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2019-2020 十三 all rights reserved.
- * 版权所有，侵权必究！
- */
+
 package ltd.newbee.mall.service.impl;
 
+import jakarta.annotation.Resource;
 import ltd.newbee.mall.common.*;
 import ltd.newbee.mall.config.ProjectConfig;
 import ltd.newbee.mall.controller.vo.*;
@@ -22,7 +16,6 @@ import ltd.newbee.mall.util.NumberUtil;
 import ltd.newbee.mall.util.PageQueryUtil;
 import ltd.newbee.mall.util.PageResult;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -36,23 +29,23 @@ import static java.util.stream.Collectors.groupingBy;
 @Service
 public class NewBeeMallOrderServiceImpl implements NewBeeMallOrderService {
 
-    @Autowired
+    @Resource
     private NewBeeMallOrderMapper newBeeMallOrderMapper;
-    @Autowired
+    @Resource
     private NewBeeMallOrderItemMapper newBeeMallOrderItemMapper;
-    @Autowired
+    @Resource
     private NewBeeMallShoppingCartItemMapper newBeeMallShoppingCartItemMapper;
-    @Autowired
+    @Resource
     private NewBeeMallGoodsMapper newBeeMallGoodsMapper;
-    @Autowired
+    @Resource
     private NewBeeMallUserCouponRecordMapper newBeeMallUserCouponRecordMapper;
-    @Autowired
+    @Resource
     private NewBeeMallCouponMapper newBeeMallCouponMapper;
-    @Autowired
+    @Resource
     private NewBeeMallSeckillMapper newBeeMallSeckillMapper;
-    @Autowired
+    @Resource
     private NewBeeMallSeckillSuccessMapper newBeeMallSeckillSuccessMapper;
-    @Autowired
+    @Resource
     private TaskService taskService;
 
     @Override

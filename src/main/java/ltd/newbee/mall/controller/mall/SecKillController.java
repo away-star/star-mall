@@ -1,9 +1,9 @@
 package ltd.newbee.mall.controller.mall;
 
+import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import ltd.newbee.mall.common.Constants;
-import ltd.newbee.mall.exception.NewBeeMallException;
 import ltd.newbee.mall.controller.vo.ExposerVO;
 import ltd.newbee.mall.controller.vo.NewBeeMallSeckillGoodsVO;
 import ltd.newbee.mall.controller.vo.NewBeeMallUserVO;
@@ -11,13 +11,13 @@ import ltd.newbee.mall.controller.vo.SeckillSuccessVO;
 import ltd.newbee.mall.dao.NewBeeMallGoodsMapper;
 import ltd.newbee.mall.entity.NewBeeMallGoods;
 import ltd.newbee.mall.entity.NewBeeMallSeckill;
+import ltd.newbee.mall.exception.NewBeeMallException;
 import ltd.newbee.mall.redis.RedisCache;
 import ltd.newbee.mall.service.NewBeeMallSeckillService;
 import ltd.newbee.mall.util.BeanUtil;
 import ltd.newbee.mall.util.MD5Util;
 import ltd.newbee.mall.util.Result;
 import ltd.newbee.mall.util.ResultGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,13 +34,13 @@ import java.util.stream.Collectors;
 @Controller
 public class SecKillController {
 
-    @Autowired
+    @Resource
     private NewBeeMallSeckillService newBeeMallSeckillService;
 
-    @Autowired
+    @Resource
     private NewBeeMallGoodsMapper newBeeMallGoodsMapper;
 
-    @Autowired
+    @Resource
     private RedisCache redisCache;
 
     @GetMapping("/seckill")

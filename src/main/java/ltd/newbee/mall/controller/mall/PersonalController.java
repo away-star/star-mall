@@ -1,11 +1,4 @@
-/**
- * 严肃声明：
- * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
- * 本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
- * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
- * Copyright (c) 2019-2020 十三 all rights reserved.
- * 版权所有，侵权必究！
- */
+
 package ltd.newbee.mall.controller.mall;
 
 import jakarta.annotation.Resource;
@@ -13,18 +6,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import ltd.newbee.mall.common.Constants;
-import ltd.newbee.mall.exception.NewBeeMallException;
 import ltd.newbee.mall.common.ServiceResultEnum;
 import ltd.newbee.mall.controller.vo.NewBeeMallUserVO;
 import ltd.newbee.mall.entity.MallUser;
+import ltd.newbee.mall.exception.NewBeeMallException;
 import ltd.newbee.mall.service.NewBeeMallCouponService;
 import ltd.newbee.mall.service.NewBeeMallUserService;
 import ltd.newbee.mall.util.*;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
@@ -37,10 +28,10 @@ public class PersonalController {
     @Resource
     private NewBeeMallUserService newBeeMallUserService;
 
-    @Autowired
+    @Resource
     private NewBeeMallCouponService newBeeMallCouponService;
-    @Autowired
-    private StringRedisTemplate redisTemplate;
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
     @Resource
     private MailClientUtil mailClientUtil;
 
@@ -83,15 +74,15 @@ public class PersonalController {
         if (StringUtils.isEmpty(email)) {
             return ResultGenerator.genFailResult("邮箱不能为空");
         }
-        if (Objects.equals(redisTemplate.opsForValue().get(email + ":count"), "5")) {
+        if (Objects.equals(stringRedisTemplate.opsForValue().get(email + ":count"), "5")) {
             return ResultGenerator.genFailResult("今日发送次数已达上限");
         }
         String code4String = ValidateCodeUtils.generateValidateCode4String(4);
-        redisTemplate.opsForValue().set(email, code4String, 5, TimeUnit.MINUTES);
-        if (redisTemplate.opsForValue().get(email + ":count") != null) {
-            redisTemplate.opsForValue().increment(email + ":count", 1);
+        stringRedisTemplate.opsForValue().set(email, code4String, 5, TimeUnit.MINUTES);
+        if (stringRedisTemplate.opsForValue().get(email + ":count") != null) {
+            stringRedisTemplate.opsForValue().increment(email + ":count", 1);
         } else {
-            redisTemplate.opsForValue().set(email + ":count", "1", 24, TimeUnit.HOURS);
+            stringRedisTemplate.opsForValue().set(email + ":count", "1", 24, TimeUnit.HOURS);
         }
         mailClientUtil.sendMail(email, "star-mall注册验证码", code4String);
         return ResultGenerator.genSuccessResult();
@@ -148,7 +139,8 @@ public class PersonalController {
         if (StringUtils.isEmpty(verifyCode)) {
             return ResultGenerator.genFailResult(ServiceResultEnum.LOGIN_VERIFY_CODE_NULL.getResult());
         }
-        String s = redisTemplate.opsForValue().get(loginName);
+        String s = stringRedisTemplate.opsForValue().get(loginName);
+
 
         if (!mailCode.equals(s)) {
             return ResultGenerator.genFailResult("邮箱验证码错误");

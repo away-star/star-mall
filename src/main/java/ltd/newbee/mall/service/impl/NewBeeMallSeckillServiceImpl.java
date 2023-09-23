@@ -1,8 +1,8 @@
 package ltd.newbee.mall.service.impl;
 
 import com.google.common.util.concurrent.RateLimiter;
+import jakarta.annotation.Resource;
 import ltd.newbee.mall.common.Constants;
-import ltd.newbee.mall.exception.NewBeeMallException;
 import ltd.newbee.mall.common.SeckillStatusEnum;
 import ltd.newbee.mall.common.ServiceResultEnum;
 import ltd.newbee.mall.controller.vo.ExposerVO;
@@ -13,13 +13,13 @@ import ltd.newbee.mall.dao.NewBeeMallSeckillMapper;
 import ltd.newbee.mall.dao.NewBeeMallSeckillSuccessMapper;
 import ltd.newbee.mall.entity.NewBeeMallSeckill;
 import ltd.newbee.mall.entity.NewBeeMallSeckillSuccess;
+import ltd.newbee.mall.exception.NewBeeMallException;
 import ltd.newbee.mall.redis.RedisCache;
 import ltd.newbee.mall.service.NewBeeMallSeckillService;
 import ltd.newbee.mall.util.MD5Util;
 import ltd.newbee.mall.util.PageQueryUtil;
 import ltd.newbee.mall.util.PageResult;
 import org.apache.commons.collections4.MapUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -34,16 +34,16 @@ public class NewBeeMallSeckillServiceImpl implements NewBeeMallSeckillService {
     // 使用令牌桶RateLimiter 限流
     private static final RateLimiter RATE_LIMITER = RateLimiter.create(100);
 
-    @Autowired
+    @Resource
     private NewBeeMallSeckillMapper newBeeMallSeckillMapper;
 
-    @Autowired
+    @Resource
     private NewBeeMallSeckillSuccessMapper newBeeMallSeckillSuccessMapper;
 
-    @Autowired
+    @Resource
     private NewBeeMallGoodsMapper newBeeMallGoodsMapper;
 
-    @Autowired
+    @Resource
     private RedisCache redisCache;
 
     @Override

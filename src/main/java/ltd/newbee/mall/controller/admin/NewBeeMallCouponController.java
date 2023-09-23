@@ -1,5 +1,6 @@
 package ltd.newbee.mall.controller.admin;
 
+import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import ltd.newbee.mall.entity.NewBeeMallCoupon;
 import ltd.newbee.mall.service.NewBeeMallCouponService;
@@ -7,7 +8,6 @@ import ltd.newbee.mall.util.PageQueryUtil;
 import ltd.newbee.mall.util.Result;
 import ltd.newbee.mall.util.ResultGenerator;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ import java.util.Map;
 @RequestMapping("admin")
 public class NewBeeMallCouponController {
 
-    @Autowired
+    @Resource
     private NewBeeMallCouponService newBeeMallCouponService;
 
     @GetMapping("/coupon")

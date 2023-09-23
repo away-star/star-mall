@@ -1,6 +1,7 @@
 package ltd.newbee.mall.redis;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
+
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
@@ -16,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RedisCache {
 
-    @Autowired
+    @Resource
     public RedisTemplate redisTemplate;
 
     /**

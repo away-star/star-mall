@@ -1,4 +1,4 @@
-<!-- Copyright (c) 2019-2020 十三 all rights reserved. -->
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -12,7 +12,7 @@
     <p th:text="'错误信息：'+${message}" style="color: red;font-weight: 600;"></p>
     <p th:text="'请求地址：'+${url}"></p>
     <h2>报告问题</h2>
-    <a href="https://github.com/newbee-ltd/newbee-mall-plus/issues/new" target="_blank" style="color: #1baeae">提交issue</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/away-star/star-mall/issues/new" target="_blank" style="color: #1baeae">提交issue</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <h2>异常堆栈跟踪日志</h2>
     <div th:each="string:${stackTrace}">
         <small><th:block th:text="${string}"></th:block></small>

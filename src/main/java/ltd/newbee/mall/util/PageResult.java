@@ -6,10 +6,9 @@ import java.util.List;
 /**
  * 分页工具类
  *
- * @author 13
- * @qq交流群 791509631
- * @email 2449207463@qq.com
- * @link https://github.com/newbee-ltd
+ * @author xingxing
+ * @email 2064989403@qq.com
+
  */
 public class PageResult<T> implements Serializable {
 

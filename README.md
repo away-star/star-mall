@@ -71,7 +71,7 @@ star-mall
 ├─src
 │  └─main
 │      ├─java
-│      │  └─ltd
+│      │  └─star
 │      │      └─newbee
 │      │          └─mall
 │      │              ├─annotion

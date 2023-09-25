@@ -7,10 +7,10 @@
 <header th:replace="~{mall/header::header-fragment}"></header>
 <content id="content">
     <nav th:replace="~{mall/header::nav-fragment}"></nav>
-    <div id="banner">
-        <div class="all-sort-list">
-            <th:block th:each="category : ${categories}">
-            <div class="item">
+    <div id="banner" style="color: #1fc8e3">
+        <div class="all-sort-list" style="background-color: #9bbcda;">
+            <th:block th:each="category : ${categories}" style="color: #1fc8e3" th:color=#aggregates >
+            <div class="item" style="color: #1fc8e3">
                 <h3><span>·</span><a href="##"><th:block th:text="${category.categoryName}"></th:block></a></h3>
                 <div class="item-list clearfix">
                     <div class="subitem">

@@ -2,11 +2,13 @@ package star.xingxing.mall.controller.vo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
 public class StarMallMyCouponVO implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = -8182785776876066101L;
 
     private Long couponUserId;

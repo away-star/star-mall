@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<aside th:fragment="sidebar-fragment(path)" class="main-sidebar sidebar-dark-primary elevation-4">
+<aside th:fragment="sidebar-fragment(path)"  class="main-sidebar sidebar-green elevation-4" >
     <!-- Brand Logo -->
     <a th:href="@{/admin/index}" class="brand-link">
-        <img src="/admin/dist/img/AdminLTELogo.png" alt="newbee-mall-plus Logo"
+        <img src="/admin/dist/img/AdminLTELogo.png" alt=" star-mall-plus Logo"
              class="brand-image img-circle elevation-3"
              style="opacity: .8; color: #0ab724" >
         <span class="brand-text font-weight-light">star-mall</span>
@@ -14,7 +14,7 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2" style="color: #0ab724">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+                data-accordion="false" style="color: #0ab724">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-header">Dashboard</li>
@@ -103,21 +103,6 @@
                         <p>
                             订单管理
                         </p>
-                    </a>
-                </li>
-                <li class="nav-header">营销管理</li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/coupon}"
-                       th:class="${path}=='newbee_mall_coupon'?'nav-link active':'nav-link'">
-                        <i class="fa fa-ticket nav-icon"></i>
-                        <p>优惠券管理</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a th:href="@{/admin/seckill}"
-                       th:class="${path}=='newbee_mall_seckill'?'nav-link active':'nav-link'">
-                        <i class="fa fa-fire nav-icon"></i>
-                        <p>秒杀管理</p>
                     </a>
                 </li>
                 <li class="nav-header">系统管理</li>

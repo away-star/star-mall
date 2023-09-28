@@ -52,7 +52,7 @@
 
                                 <div class="order-summary">
                                     <div class="order-status" th:text="${orderDetailVO.orderStatusString}">
-                                        newbee
+                                        starMall
                                     </div>
                                     <div class="order-desc">
                                         <th:block th:if="${orderDetailVO.orderStatus==0}">请尽快完成支付哦~</th:block>
@@ -146,7 +146,7 @@
                                             <td class="col col-name">
                                                 <p class="name">
                                                     <a target="_blank" th:href="@{'/goods/detail/'+${item.goodsId}}"
-                                                       th:text="${item.goodsName}">newbee</a>
+                                                       th:text="${item.goodsName}">starMall</a>
                                                 </p>
                                             </td>
                                             <td class="col col-price"><p class="price"
@@ -164,7 +164,7 @@
                                 <table class="info-table">
                                     <tbody>
                                     <tr>
-                                        <td th:text="${orderDetailVO.userAddress}">newbee</td>
+                                        <td th:text="${orderDetailVO.userAddress}">starMall</td>
                                     </tr>
                                     </tbody>
                                 </table>

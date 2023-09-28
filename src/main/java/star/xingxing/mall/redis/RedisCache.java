@@ -1,7 +1,6 @@
 package star.xingxing.mall.redis;
 
 import jakarta.annotation.Resource;
-
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.core.script.DefaultRedisScript;

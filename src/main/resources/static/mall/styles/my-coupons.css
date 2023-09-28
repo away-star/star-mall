@@ -409,13 +409,13 @@ a {
     line-height: 28px;
 }
 
-.newbee-pagenavi {
+.starMall-pagenavi {
     height: 30px;
     padding: 15px 0;
     text-align: center;
 }
 
-.newbee-pagenavi .numbers {
+.starMall-pagenavi .numbers {
     display: inline-block;
     *zoom: 1;
     *display: inline;
@@ -429,22 +429,22 @@ a {
     color: #b0b0b0;
 }
 
-.newbee-pagenavi .iconfont {
+.starMall-pagenavi .iconfont {
     font-size: 24px;
     vertical-align: bottom;
 }
 
-.newbee-pagenavi .current {
+.starMall-pagenavi .current {
     background-color: #757575;
     color: #fff;
 }
 
-.newbee-pagenavi a.numbers {
+.starMall-pagenavi a.numbers {
     -webkit-transition: all .2s linear;
     transition: all .2s linear
 }
 
-.newbee-pagenavi a.numbers:hover {
+.starMall-pagenavi a.numbers:hover {
     background: #b0b0b0;
     color: #fff
 }

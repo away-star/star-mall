@@ -70,6 +70,9 @@
                                        placeholder="请输入收货信息" th:value="${session.newBeeMallUser.address}"
                                        required="true">
                             </div>
+                            <div class="form-group">
+                                <button type="reset" class="btn btn-primary" onclick="recover()">重置密码</button>
+                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -95,6 +98,31 @@
     function openUpdateModal() {
         $('#personalInfoModal').modal('show');
     }
+    function recover() {
+        $.ajax({
+            type: 'GET',//方法类型
+            url: '/admin/recover',
+            success: function (result) {
+                swal({
+                    title: "重置成功",
+                    text: "是否跳转至登录页?",
+                    icon: "success",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((flag) => {
+                        if (flag) {
+                            window.location.href = '/login';
+                        }
+                    }
+                )
+                ;
+            },
+            error: function () {
+                alert('操作失败');
+            }
+        });
+    }
+
 
     //绑定modal上的保存按钮
     $('#saveButton').click(function () {

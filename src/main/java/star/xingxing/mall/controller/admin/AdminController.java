@@ -4,12 +4,16 @@ package star.xingxing.mall.controller.admin;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import star.xingxing.mall.common.ServiceResultEnum;
 import star.xingxing.mall.entity.AdminUser;
 import star.xingxing.mall.service.AdminUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Objects;
 
 /**
  * @author xingxing
@@ -18,10 +22,16 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @RequestMapping("/admin")
+@Slf4j
 public class AdminController {
+
+
 
     @Resource
     private AdminUserService adminUserService;
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
 
     @GetMapping({"/login"})
     public String login() {
@@ -60,6 +70,8 @@ public class AdminController {
             // session.setMaxInactiveInterval(60 * 60 * 2);
             return "redirect:/admin/index";
         } else {
+            //stringRedisTemplate.opsForValue().increment(userName,1);
+
             session.setAttribute("errorMsg", "登录失败");
             return "admin/login";
         }

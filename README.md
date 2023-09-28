@@ -53,8 +53,6 @@
     - 业务逻辑层（Service）：封装业务逻辑，处理数据处理和业务规则。
     - 控制层（Controller）：接收和处理前端请求，协调业务逻辑的处理，并返回响应结果。
     - 缓存层：使用Redis作为缓存数据库，提高系统性能和响应速度。
-    - 安全认证和权限控制：可以使用Spring Security等框架实现用户认证和权限管理。
-    - 异步消息队列：可以使用RabbitMQ或Kafka等消息队列，实现异步任务处理和解耦。
     - 日志管理：使用日志框架，如Log4j或Logback，记录系统运行日志。
     - 单元测试和集成测试：使用JUnit等测试框架进行单元测试和集成测试，确保代码质量和功能稳定性。
 
@@ -72,7 +70,7 @@ star-mall
 │  └─main
 │      ├─java
 │      │  └─star
-│      │      └─newbee
+│      │      └─starMall
 │      │          └─mall
 │      │              ├─annotion
 │      │              ├─common
@@ -138,7 +136,7 @@ star-mall
 ```
 ## UML类图
 
-![img.png](images/img.png)
+![img_1.png](images/img_30.png)
 
 `主要商品类图`：
 ```gherkin
@@ -191,27 +189,90 @@ star-mall
 
 - 用户注册
 
-![img.png](images/img11.png)
+![img.png](images/img_14.png)
+
 - 用户登录
 
 ![img_1.png](images/img_1.png)
+
 - 购买商品
 
 ![img_2.png](images/img_2.png)
+
 - 查看商品列表
 
 ![img_3.png](images/img_3.png)
+
+
 - 查看订单列表
 
 ![img_4.png](images/img_4.png)
+
 - 查看购物车
 
 ![img_5.png](images/img_5.png)
 
+- 秒杀商品
 
-## 主要功能演示
+![img.png](images/img_12.png)
 
-- 用户登录注册
-![img_6.png](images/img_6.png)
+- 保存商品至购物车
+
+![img_1.png](images/img_13.png)
+
+- 商品图片上传
+
+![img_2.png](images/img_8.png)
+
+- 展示优惠券列表
+
+![img_3.png](images/img_9.png)
+
+- 删除优惠券
+
+![img_4.png](images/img_10.png)
+
+- 首页数据获取
+
+![img_5.png](images/img_11.png)
+
+## 主要功能截图
+
+- 用户登录
+![img_2.png](images/img_16.png)
+
+- 用户注册
+![img_3.png](images/img_17.png)
+
 - 商城页展示
-![img_7.png](images/img_7.png)
+![img_4.png](images/img_18.png)
+
+- 商品详情页
+![img_5.png](images/img_19.png)
+
+- 加入购物车
+![img_6.png](images/img_20.png)
+
+- 个人中心
+![img_7.png](images/img_21.png)
+
+- 管理员用户管理
+![img_8.png](images/img_22.png)
+
+- 后台管理页面
+![img_9.png](images/img_23.png)
+
+
+## 特定功能展示
+- 密码不低于8位
+![img_10.png](images/img_24.png)
+
+- 输入5次密码后，账户被禁止
+![img_11.png](images/img_25.png)
+
+- 注册qq验证码发送
+![img_12.png](images/img_26.png)
+
+- 重置密码后发送随机密码到邮箱
+![img_13.png](images/img_27.png)
+![img_14.png](images/img_28.png)

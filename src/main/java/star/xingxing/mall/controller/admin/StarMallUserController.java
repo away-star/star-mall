@@ -3,20 +3,20 @@ package star.xingxing.mall.controller.admin;
 
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
-import star.xingxing.mall.service.StarMallUserService;
-import star.xingxing.mall.util.PageQueryUtil;
-import star.xingxing.mall.util.Result;
-import star.xingxing.mall.util.ResultGenerator;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import star.xingxing.mall.service.StarMallUserService;
+import star.xingxing.mall.util.MailClientUtil;
+import star.xingxing.mall.util.PageQueryUtil;
+import star.xingxing.mall.util.Result;
+import star.xingxing.mall.util.ResultGenerator;
 
 import java.util.Map;
 
 /**
  * @author xingxing
  * @email 2064989403@qq.com
-
  */
 @Controller
 @RequestMapping("/admin")
@@ -24,6 +24,9 @@ public class StarMallUserController {
 
     @Resource
     private StarMallUserService starMallUserService;
+
+    @Resource
+    private MailClientUtil mailClientUtil;
 
     @GetMapping("/users")
     public String usersPage(HttpServletRequest request) {
@@ -62,4 +65,16 @@ public class StarMallUserController {
             return ResultGenerator.genFailResult("禁用失败");
         }
     }
+
+
+    @GetMapping("/recover")
+    @ResponseBody
+    public Result recover(HttpServletRequest request) {
+        System.out.println("进入recover");
+
+        mailClientUtil.sendMail("2064989403@qq.com", "账号恢复", "您的密码已重置为dasdasdas，请重新登录");
+
+        return ResultGenerator.genSuccessResult();
+    }
+
 }

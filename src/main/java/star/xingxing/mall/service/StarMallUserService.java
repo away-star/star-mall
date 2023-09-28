@@ -51,4 +51,5 @@ public interface StarMallUserService {
      * @return
      */
     Boolean lockUsers(Integer[] ids, int lockStatus);
+
 }

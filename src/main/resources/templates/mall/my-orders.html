@@ -83,7 +83,7 @@
                                                                     </div>
                                                                     <p class="name"><a target="_blank"
                                                                                        th:href="@{'/goods/detail/'+${item.goodsId}}"
-                                                                                       th:text="${item.goodsName}">newbee</a>
+                                                                                       th:text="${item.goodsName}">starMall</a>
                                                                     </p>
                                                                     <p class="price"
                                                                        th:text="${item.sellingPrice+'元 x '+item.goodsCount}">
@@ -105,7 +105,7 @@
                     </div>
                     <th:block th:unless="${#lists.isEmpty(pageResult.list)}">
                         <div id="J_orderListPages">
-                            <div class="newbee-pagenavi">
+                            <div class="starMall-pagenavi">
                                 <a th:if="${pageResult.currPage != 1}"
                                    class="numbers"
                                    th:href="@{'/orders?page=1'}">

@@ -9,14 +9,14 @@
     <link rel="stylesheet" th:href="@{mall/styles/header.css}">
     <link rel="stylesheet" th:href="@{/admin/plugins/sweetalert/sweetalert.css}"/>
 </head>
-<body>
+<body  style="background-color: #ffffff">
 <div class="top center">
     <div class="logo center">
         <a href="./index.html" target="_blank"><img src="mall/image/login-logo-2.svg" alt=""></a>
     </div>
 </div>
-<div class="form center">
-    <div class="login">
+<div class="form center"  >
+    <div class="login" style="background-color: #76daba">
         <div class="login_center">
             <div class="login_top">
                 <div class="left fl">邮箱登录</div>
@@ -56,7 +56,24 @@
 <script th:src="@{/admin/dist/js/public.js}"></script>
 <script th:src="@{/admin/plugins/sweetalert/sweetalert.min.js}"></script>
 <script type="text/javascript">
+
+    count=0
     function login() {
+        count++;
+        console.log(count)
+        console.log("come here")
+        if (count===5){
+            swal({
+                title: "账号已被锁定",
+                text: "您已被限制",
+                icon: "error",
+                buttons: false,
+                dangerMode: true,
+            })
+            ;
+            return false;
+        }
+
         var loginName = $("#loginName").val();
         if (!validEmail(loginName)) {
             swal('请输入正确的邮箱号码', {
@@ -66,9 +83,10 @@
         }
         var password = $("#password").val();
         if (!validPassword(password)) {
-            swal('请输入正确的密码格式(6-20位字符和数字组合)', {
+            swal('请输入正确的密码格式(8-20位字符和数字组合)', {
                 icon: "error",
             });
+
             return false;
         }
         var verifyCode = $("#verifyCode").val();
@@ -92,6 +110,7 @@
                     swal(result.message, {
                         icon: "error",
                     });
+                    count++;
                     $('#kaptcha').trigger('click');
                 }
             },

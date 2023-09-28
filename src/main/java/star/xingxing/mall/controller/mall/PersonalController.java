@@ -51,6 +51,8 @@ public class PersonalController {
 
     @GetMapping({"/login", "login.html"})
     public String loginPage(HttpServletRequest request) {
+
+
         if (HttpUtil.isAjaxRequest(request)) {
             throw new StarMallException("请先登陆！");
         }
@@ -94,6 +96,11 @@ public class PersonalController {
                         @RequestParam("verifyCode") String verifyCode,
                         @RequestParam("password") String password,
                         HttpSession httpSession) {
+        if (stringRedisTemplate.opsForValue().get(loginName)!=null){
+        if (Integer.parseInt(Objects.requireNonNull(stringRedisTemplate.opsForValue().get(loginName)))>=5){
+            return ResultGenerator.genFailResult("今日登陆次数已达5次，您的账户已经被禁止登陆，请明日再试！");
+        }}
+
         if (StringUtils.isEmpty(loginName)) {
             return ResultGenerator.genFailResult(ServiceResultEnum.LOGIN_NAME_NULL.getResult());
         }
@@ -116,6 +123,11 @@ public class PersonalController {
             return ResultGenerator.genSuccessResult();
         }
         //登录失败
+        stringRedisTemplate.opsForValue().increment(loginName,1);
+        log.error(stringRedisTemplate.opsForValue().get(loginName)+"===========");
+        if (Integer.parseInt(Objects.requireNonNull(stringRedisTemplate.opsForValue().get(loginName)))>=5){
+            return ResultGenerator.genFailResult("今日登陆次数已达5次，您的账户已经被禁止登陆，请明日再试！");
+        }
         return ResultGenerator.genFailResult(loginResult);
     }
 

@@ -2,13 +2,13 @@
 package star.xingxing.mall.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
-import star.xingxing.mall.util.HttpUtil;
-import star.xingxing.mall.util.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.ModelAndView;
+import star.xingxing.mall.util.HttpUtil;
+import star.xingxing.mall.util.Result;
 
 /**
  * star-mall全局异常处理
